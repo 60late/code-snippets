@@ -1,0 +1,19 @@
+{
+  // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+
+
+  "Git commit":{ // 唯一key值
+    "prefix": "commit", // 输入的匹配词
+    "body": "${1:feat}($2): ",
+    "description": "Git commit message for doc"
+  },
+  "Git commit plus":{
+    "prefix": "commit plus",
+    "body": "${1:feat}($2): \n\n1. $3;\n2. $4;",
+    "description": "Git commit message plus for doc "
+  },
+}
