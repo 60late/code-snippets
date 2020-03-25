@@ -1,0 +1,10 @@
+{
+  "Vue create template tag": {
+    "prefix": "vue template",
+    "body": ["<template>", "\t${0}", "</template>"]
+  },
+  "Vue create slot tag": {
+    "prefix": "vue slot",
+    "body": ["<slot name=\"${1}\">", "\t${0}", "</slot>"]
+  }
+}

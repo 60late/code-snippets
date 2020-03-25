@@ -5,15 +5,20 @@
   // same ids are connected.
   // Example:
 
-
-  "Git commit":{ // 唯一key值
-    "prefix": "commit", // 输入的匹配词
-    "body": "${1:feat}($2): ",
+  "Git commit": {
+    "prefix": "commit",
+    "body": "${1|feat,fix,perf,style,test,revert,docs,refactor,chore|} (${2:scope/issue}): ${3:change log}",
     "description": "Git commit message for doc"
   },
-  "Git commit plus":{
+  "Git commit plus": {
     "prefix": "commit plus",
-    "body": "${1:feat}($2): \n\n1. $3;\n2. $4;",
+    "body": [
+      "${1|feat,fix,perf,style,test,revert,docs,refactor,chore|}(${2:scope/issue}): ${3:change log}",
+      "",
+      "1. ${5:detail}",
+      "2. ${6:detail}",
+      "3. ${7:detail}",
+    ],
     "description": "Git commit message plus for doc "
-  },
+  }
 }

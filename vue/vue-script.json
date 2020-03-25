@@ -1,0 +1,87 @@
+{
+  "Vue Lifecycle Select": {
+    "prefix": "vue lifecycle",
+    "body": [
+      "${1|beforeCreate,created,beforeMount,mounted,beforeUpdate,updated,beforeDestroy,destroyed|}() {",
+      "\t${0}",
+      "},"
+    ],
+    "description": "Vue Lifecycle 生命周期可选"
+  },
+
+  "Vue Data": {
+    "prefix": "vue data",
+    "body": ["data() {", "\treturn {", "\t\t${1:key}: ${2:value}", "\t}", "},"],
+    "description": "Vue Component Data"
+  },
+
+  "Vue Computed": {
+    "prefix": "vue computed",
+    "body": [
+      "computed: {",
+      "\t${1:name}() {",
+      "\t\treturn this.${2:data} ${0}",
+      "\t},",
+      "},"
+    ],
+    "description": "Vue Computed Value"
+  },
+
+  "Vue Methods": {
+    "prefix": "vue methods",
+    "body": ["methods: {", "\t${1:name}() {", "\t\t${0}", "\t},", "},"],
+    "description": "Vue Methods"
+  },
+
+  "Vue Watch": {
+    "prefix": "vue watch",
+    "body": [
+      "watch: {",
+      "\t${1:data}(newValue, oldValue) {",
+      "\t\t${0}",
+      "\t},",
+      "},"
+    ],
+    "description": "Vue Watch"
+  },
+
+  "Vue Watch Data": {
+    "prefix": "vue watch data",
+    "body": [
+      "${1:data}: {",
+      "\timmediate: ${2|true,false|},",
+      "\tdeep: ${3|true,false|},",
+      "\thandler(newValue, oldValue) {",
+      "\t\t${0}",
+      "\t}",
+      "},"
+    ],
+    "description": "Vue watch data with options"
+  },
+
+  "Vue Props": {
+    "prefix": "vue props",
+    "body": [
+      "props: {",
+      "\t${1:propName}: {",
+      "\t\ttype: ${2:Number},",
+      "\t\tdefault: ${0}",
+      "\t},",
+      "},"
+    ],
+    "description": "Vue Props with Default"
+  },
+
+  "Vue Props Data": {
+    "prefix": "vue props data",
+    "body": [
+      "${1:propName}: {",
+      "\ttype: ${2|String,Number,Boolean,Function,Object,Array,Symbol|},",
+      "\trequired: ${3|false,true|},",
+      "\tdefault: ${0},",
+      "\t${4:validator: (value)=>${5} }",
+      "},"
+    ],
+    "description": "Vue Props data all options"
+  }
+}

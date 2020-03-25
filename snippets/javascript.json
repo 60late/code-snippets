@@ -1,155 +1,93 @@
 {
-	"Creat object":{
-		"prefix": "obj",
-		"body": "\"${1:obj}\":{ $2 }"
-	},
+  "Creat variable for const": {
+    "prefix": "const",
+    "body": "const ${1:variable} = ${0}"
+  },
 
-	"Method": {
-		"prefix": "method",
-		"body": "${1:name}(${2:params}) {\n\t${3}\n}$0",
-		"description": "Creates a method whitout function"
-	},
+  "Creat variable for let": {
+    "prefix": "let",
+    "body": "let ${1:variable} = ${0}"
+  },
 
-	"Create a promise": {
-		"prefix": "promise",
-		"body": "return new Promise((resolve, reject) => {\n\t${1}\n})",
-		"description": "Creates and returns a new Promise"
-	},
+  "Assign for": {
+    "prefix": "assign",
+    "body": "${1:variable} = ${0}"
+  },
 
-	"Then-Catch statement": {
-		"prefix": "then catch",
-		"body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n})",
-		"description": "Then-Catch statement, Add the .then and .catch methods to handle promises"
-	  },
-	"Assign for":{
-		"prefix": "assign",
-		"body": "${1:variable} = ${0}",
-	},
-	"Creat variable for const":{
-	  "prefix": "const",
-	  "body": "const ${1:variable} = ${0}",
-	},
-	"Creat variable for let":{
-	  "prefix": "let",
-	  "body": "let ${1:variable} = ${0}",
-	},
-	"Creat variable for object":{
-	  "prefix": "key",
-	  "body": "${1:key}: ${0}",
-	},
-	"Anonymous function": {
-		"prefix": "anonymous function",
-		"body": "(${1:params}) => {\n\t${2}\n}",
-		"description": "Creates an anonymous function in ES6 syntax"
-	},
-	"Property Get": {
-		"prefix": "property get",
-		"body": "get ${1:propertyName}() {\n\treturn this.${0}\n}",
-		"description": "Creates a getter property inside a class in ES6 syntax"
-	  },
-	"Property Set": {
-		"prefix": "property set",
-		"body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
-		"description": "Creates a setter property inside a class in ES6 syntax"
-	  },
-	"Print to console": {
-	  "prefix": "log",
-	  "body": [
-	  "console.log('${1:value}:',${1:value})",
-	  ],
-	  "description": "Log output to console"
-	},
-	"Print to console with number": {
-	  "prefix": "log n",
-	  "body":"console.log('(current:${1:number})${2:value}:',${2:value})",
-	  "description": "Log output to console"
-	},
-	"Import external module": {
-		"prefix": "import plus",
-		"body": "import ${2:moduleName} from '${1|@,.,~,..|}'",
-		"description": "Import external module plus"
-	},
-	"Import everything from module": {
-		"prefix": "import everything",
-		"body": "import * as ${2:alias} from '${1|@,.,~,..|}'$0",
-		"description": "Imports everything as alias from the module"
-	  },
-	"Require": {
-		"prefix": "require",
-		"body": "require('${1:package}')",
-		"description": "Require a package"
-	},
+  "Creat Variable for Object": {
+    "prefix": "key",
+    "body": "${1:key}: ${2}, ${0}"
+  },
 
-	// vue script
-	"Vue Base Object": {
-		"prefix": "vue base",
-		"body": "${1|computed,methods|}: {\n\t${2:name}() {\n\t\n\t}\n},",
-		"description": "Vue Component Data"
-	},
-	"Vue Lifecycle Select": {
-		"prefix": "vue lifecycle",
-		"body": ["${1|beforeCreate,created,beforeMount,mounted,beforeUpdate,updated,beforeDestroy,destroyed|} () {", "\t${0}", "},"],
-		"description": "Vue Lifecycle 生命周期可选"
-	},
+  "Method": {
+    "prefix": "method",
+    "body": ["${1:name}(${2:params}) {", "\t${3}", "}$0"],
+    "description": "a method whitout 'function'"
+  },
 
-	"Vue Data": {
-		"prefix": "vue data",
-		"body": ["data() {", "\treturn {", "\t\t${1:key}: ${2:value}", "\t}", "},"],
-		"description": "Vue Component Data"
-	},
-	"Vue Computed": {
-		"prefix": "vue computed",
-		"body": [
-		  "computed: {",
-		  "\t${1:name}() {",
-		  "\t\treturn this.${2:data} ${0}",
-		  "\t}",
-		  "},"
-		],
-		"description": "Vue Computed Value"
-	},
-	"Vue Methods": {
-		"prefix": "vue methods",
-		"body": "methods: {\n\t${1:name}() {\n\t\t${0}\n\t}\n},",
-		"description": "Vue Methods"
-	},
+  "Reture a promise": {
+    "prefix": "promise",
+    "body": ["new Promise((resolve, reject) => {", "\t${1}", "})"],
+    "description": "A new Promise "
+  },
 
-	"Vue Watch": {
-		"prefix": "vue watch",
-		"body": [
-		  "watch: {",
-		  "\t${1:data}(${2:newValue}, ${3:oldValue}) {",
-		  "\t\t${0}",
-		  "\t}",
-		  "},"
-		],
-		"description": "Vue Watch"
-	},
-	"Vue Watch Plus": {
-		"prefix": "vue watch plus",
-		"body": [
-		  "watch: {",
-		  "\t${1:data}: {",
-		  "\t\timmediate: ${2:true},",
-		  "\t\tdeep: ${3:true},",
-		  "\t\thandler(${4:newValue}, ${5:oldValue}) {",
-		  "\t\t\t${0}",
-		  "\t\t}",
-		  "\t}",
-		  "},"
-		],
-		"description": "Vue Watch Plus"
-	},
-	"Vue Props": {
-		"prefix": "vue props",
-		"body": [
-		  "props: {",
-		  "\t${1:propName}: {",
-		  "\t\ttype: ${2:Number},",
-		  "\t\tdefault: ${0}",
-		  "\t},",
-		  "},"
-		],
-		"description": "Vue Props with Default"
-	},
+  "Then-Catch statement": {
+    "prefix": "then catch",
+    "body": [
+      ".then((${1:result}) => {",
+      "\t${2}",
+      "}).catch((${3:err}) => {",
+      "\t${4}",
+      "})"
+    ],
+    "description": "Then-Catch statement, Add the .then and .catch methods to handle promises"
+  },
+
+  "Arrow function": {
+    "prefix": "arrow function",
+    "body": ["(${1}) => {", "\t${2}", "}"],
+    "description": "An arrow function"
+  },
+
+  "Property get": {
+    "prefix": "property get",
+    "body": ["get ${1:propertyName}() {", "\treturn this.${0}", "}"],
+    "description": "A getter property inside a class"
+  },
+
+  "Property set": {
+    "prefix": "property set",
+    "body": ["set ${1:propertyName}(${2:value}) {", "\t${0}", "}"],
+    "description": "A setter property inside a class"
+  },
+
+  "Print to console": {
+    "prefix": "log",
+    "body": ["console.log('${1:value}:',${1:value})"],
+    "description": "Log output to console"
+  },
+
+  "Print to console with number": {
+    "prefix": "log n",
+    "body": "console.log('(current:${1:number})${2:value}:',${2:value})",
+    "description": "Log output to console"
+  },
+
+  "Import external module": {
+    "prefix": "import plus",
+    "body": "import ${2:moduleName} from '${1|@,.,~,..|}'",
+    "description": "Import external module plus"
+  },
+
+  "Import everything from module": {
+    "prefix": "import everything",
+    "body": "import * as ${2:alias} from '${1|@,.,~,..|}'$0",
+    "description": "Imports everything as alias from the module"
+  },
+
+  "Require": {
+    "prefix": "require",
+    "body": "require('${1:package}')",
+    "description": "Require a package"
+  }
 }

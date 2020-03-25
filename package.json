@@ -1,9 +1,9 @@
 {
-  "name": "vscode-snippets",
-  "displayName": "VSCode Snippets",
-  "description": "Snippets",
-  "icon": "images/vue-logo.png",
-  "version": "1.0.0",
+  "name": "code-snippets",
+  "displayName": "Code Snippets",
+  "description": "Code snippets for vscode",
+  "icon": "logo.png",
+  "version": "1.0.1",
   "publisher": "wangzi",
   "engines": {
     "vscode": "^1.14.0"
@@ -19,61 +19,45 @@
   "keywords": [
     "Snippets"
   ],
-  "extensionDependencies": [
-    "octref.vetur"
-  ],
   "categories": [
     "Snippets"
   ],
   "contributes": {
     "snippets": [
       {
+        "path": "./snippets/global.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/jquery.json"
+      },
+      {
         "language": "vue",
-        "path": "./snippets/vue.json"
+        "path": "./vue/vue.json"
       },
       {
         "language": "html",
-        "path": "./snippets/vue-template.json"
+        "path": "./vue/vue-html.json"
       },
       {
         "language": "vue-html",
-        "path": "./snippets/vue-template.json"
+        "path": "./vue/vue-html.json"
       },
       {
         "language": "javascript",
-        "path": "./snippets/vue-script.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/vue-script-vuex.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/vue-script-router.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/nuxt-config.json"
+        "path": "./vue/vue-script.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/vue-script.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/vue-script-vuex.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/vue-script-router.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/nuxt-config.json"
-      },
-      {
-        "language": "plaintext",
-        "path": "./snippets/plaintext.json"
+        "path": "./vue/vue-script.json"
       }
     ]
   }

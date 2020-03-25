@@ -1,0 +1,30 @@
+{
+	"jQuery ajax": {
+    "prefix": "jquery ajax",
+    "body": [
+      "$.ajax({",
+      "\ttype: \"${1|GET,POST|}\",",
+      "\turl: \"${2:url}\",",
+      "\tdata: \"${3:data}\",",
+      "\tdataType: \"${4|json,text,html,jsonp,script,xml|}\",",
+      "\tsuccess: function (res) {",
+      "\t\t${5}",
+      "\t},",
+      "\terror: function (err) {",
+      "\t\t${6}",
+      "\t},",
+      "});"
+    ],
+    "description": "Perform an asynchronous Ajax request."
+  },
+  "jQuery click": {
+    "prefix": "jquery click",
+    "body": [
+      "$(${selector}).click(function (e) { ",
+      "\te.preventDefault();",
+      "\t$0",
+      "});"
+    ],
+    "description": "Bind an event handler to the \"click\" JavaScript event, or trigger that event on an element."
+  }
+}

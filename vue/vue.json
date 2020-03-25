@@ -1,0 +1,62 @@
+{
+  "Vue Single File Component": {
+    "prefix": "vue base default",
+    "body": [
+      "<template>",
+      "\t<div class=\"container\">",
+      "\t\ttemplate",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "\t${0}",
+      "}",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with SCSS"
+  },
+
+  "Vue File Component separate js and scss ": {
+    "prefix": "vue base import",
+    "body": [
+      "<template>",
+      "\t<div class=\"container\">",
+      "\t\ttemplate",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script src=\"${1:index.js}\"></script>",
+      "<style src=\"${2:index.scss}\" scoped></style>",
+      ""
+    ],
+    "description": "Base for Vue File separate js and scss"
+  },
+
+  "Vue Single File for All": {
+    "prefix": "vue base all",
+    "body": [
+      "<template>",
+      "\t<div class=\"container\">",
+      "\t\ttemplate",
+      "\t</div>",
+      "</template>",
+      "\n<script>",
+      "export default {",
+      "\tdata() {\n\t\treturn {\n\t\t\t\n\t\t}\n\t},",
+      "\tcomputed: {\n\t\t\n\t},",
+      "\tmethods: {\n\t\tinit() {\n\t\t\t\n\t\t}\n\t},",
+      "\tmounted() {",
+      "\t\tthis.init()",
+      "\t},",
+      "}",
+      "</script>",
+      "\n<style lang=\"scss\" scoped>\n</style>\n"
+    ],
+    "description": "All of vue"
+  }
+}
