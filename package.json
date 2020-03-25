@@ -3,7 +3,7 @@
   "displayName": "Code Snippets",
   "description": "Code snippets for vscode",
   "icon": "logo.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "wangzi",
   "engines": {
     "vscode": "^1.14.0"
